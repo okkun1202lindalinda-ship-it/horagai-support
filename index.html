@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="法螺貝アプリの使い方、よくある質問、安全上の注意、お問い合わせ">
+  <meta name="theme-color" content="#91ced8">
+  <title>法螺貝 サポート</title>
+  <link rel="icon" href="assets/horagai.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --water: #91ced8;
+      --water-soft: #dff3f6;
+      --ink: #173c43;
+      --muted: #527078;
+      --paper: rgba(255, 255, 255, 0.82);
+      --line: rgba(23, 60, 67, 0.14);
+      --accent: #246b75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255,255,255,.5), transparent 30rem),
+        linear-gradient(180deg, var(--water) 0%, var(--water-soft) 64%, #f8fcfd 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 10;
+      padding: .7rem 1rem;
+      border-radius: .7rem;
+      background: white;
+    }
+
+    header {
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      padding: 5rem 1.25rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero {
+      width: min(42rem, 100%);
+    }
+
+    .shell {
+      width: min(30rem, 84vw);
+      height: auto;
+      filter: drop-shadow(0 1.1rem 1.4rem rgba(30, 68, 75, .16));
+    }
+
+    h1 {
+      margin: 1rem 0 .25rem;
+      font-size: clamp(2.3rem, 9vw, 4.5rem);
+      letter-spacing: .08em;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      margin: .6rem 0 1.8rem;
+      font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .7rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: .65rem 1rem;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(255,255,255,.52);
+      text-decoration: none;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    main {
+      width: min(54rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    section {
+      margin: 1.2rem 0;
+      padding: clamp(1.35rem, 4vw, 2.2rem);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: var(--paper);
+      box-shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .07);
+      backdrop-filter: blur(12px);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+    }
+
+    h3 {
+      margin: 1.6rem 0 .35rem;
+      font-size: 1.05rem;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    p, ul {
+      margin-top: .45rem;
+    }
+
+    .note {
+      padding: 1rem 1.1rem;
+      border-left: .3rem solid var(--accent);
+      border-radius: .35rem .9rem .9rem .35rem;
+      background: rgba(145, 206, 216, .2);
+    }
+
+    .contact {
+      display: grid;
+      gap: .9rem;
+    }
+
+    .contact .button {
+      justify-self: start;
+      color: white;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    footer {
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">本文へ移動</a>
+  <header>
+    <div class="hero">
+      <img class="shell" src="assets/horagai.png" alt="楽器としての法螺貝">
+      <h1>法螺貝</h1>
+      <p class="tagline">上手に吹くと、良い音が出ます。</p>
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a class="button" href="#howto">吹き方</a>
+        <a class="button" href="#faq">よくある質問</a>
+        <a class="button" href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section id="howto">
+      <h2>吹き方</h2>
+      <ol>
+        <li>端末のマイクと法螺貝の歌口が近い向きで持ちます。</li>
+        <li>マイクへ口を近づけすぎず、少し距離をあけます。</li>
+        <li>強すぎない、ほどよい息を一定に吹きかけます。</li>
+        <li>端末をゆっくり傾けたり、振ったりして音の変化を楽しみます。</li>
+      </ol>
+      <p class="note">強すぎる息を直接当て続けないでください。呼気の水分がマイクや充電端子へ入らないよう、端末から少し距離をあけてお楽しみください。大きな音を出すときは周囲へご配慮ください。</p>
+    </section>
+
+    <section id="faq">
+      <h2>よくある質問</h2>
+
+      <h3>息を吹いても鳴りません</h3>
+      <p>設定アプリで法螺貝のマイク利用が許可されているか確認してください。弱すぎる息では鳴らないことがあります。強く吹き込み続けるのではなく、端末から少し距離をあけて、ほどよい息を一定に当ててみてください。</p>
+
+      <h3>自分に合う吹き方へ調整できますか</h3>
+      <p>アプリ右上の法螺貝アイコンから設定を開き、「自分の息に合わせる」をお試しください。</p>
+
+      <h3>音程を変えるにはどうしますか</h3>
+      <p>演奏中に端末を前後へ傾けると音程が変わります。素早く振る動きでも、一時的な音の変化を楽しめます。端末の向きは音量には影響しません。</p>
+
+      <h3>端末を叩いたときだけ「ポン」と鳴ります</h3>
+      <p>演奏していないときに一定以上の衝撃を検出すると、法螺貝を叩いたような鼓風の音が鳴ります。端末の落下や強い衝撃は故障の原因になるため、軽い動きの範囲でお楽しみください。</p>
+
+      <h3>広告をなくしたのに再び表示されます</h3>
+      <p>右上の法螺貝アイコンから設定を開き、「以前の購入を復元」を選んでください。購入に使用したApple Accountでの確認が必要です。</p>
+
+      <h3>録音やクラウド保存はできますか</h3>
+      <p>バージョン1では、録音、利用者アカウント、クラウド保存・同期には対応していません。</p>
+    </section>
+
+    <section id="privacy">
+      <h2>プライバシー</h2>
+      <p>生の音声や端末の動きを保存・送信しません。マイク入力は端末内で息の強さへ変換し、傾きや動きは演奏操作にだけ使います。</p>
+      <p><a href="privacy.html">プライバシーポリシー全文を読む</a></p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>お問い合わせ</h2>
+      <p>不具合やご要望は、GitHubの問い合わせページからお知らせください。公開ページのため、氏名、メールアドレス、購入情報などの個人情報は書き込まないでください。</p>
+      <a class="button" href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">お問い合わせページを開く</a>
+      <p>お問い合わせの際は、利用しているiPhoneの機種、iOSのバージョン、発生した状況を個人情報を含めずにお知らせください。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>法螺貝 Version 0.1.0</p>
+    <p>最終更新日：2026年7月29日</p>
+  </footer>
+</body>
+</html>
