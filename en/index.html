@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Horagai app support, playing tips, safety notes, privacy information, and contact details">
+  <meta name="theme-color" content="#91ced8">
+  <title>Horagai Support</title>
+  <link rel="icon" href="../assets/horagai.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --water: #91ced8;
+      --water-soft: #dff3f6;
+      --ink: #173c43;
+      --muted: #527078;
+      --paper: rgba(255, 255, 255, 0.82);
+      --line: rgba(23, 60, 67, 0.14);
+      --accent: #246b75;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255,255,255,.5), transparent 30rem),
+        linear-gradient(180deg, var(--water) 0%, var(--water-soft) 64%, #f8fcfd 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 10;
+      padding: .7rem 1rem;
+      border-radius: .7rem;
+      background: white;
+    }
+
+    header {
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      padding: 5rem 1.25rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero {
+      width: min(42rem, 100%);
+    }
+
+    .shell {
+      width: min(30rem, 84vw);
+      height: auto;
+      filter: drop-shadow(0 1.1rem 1.4rem rgba(30, 68, 75, .16));
+    }
+
+    h1 {
+      margin: 1rem 0 .25rem;
+      font-size: clamp(2.3rem, 9vw, 4.5rem);
+      letter-spacing: .04em;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      margin: .6rem 0 1.8rem;
+      font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .7rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: .65rem 1rem;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(255,255,255,.52);
+      text-decoration: none;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    main {
+      width: min(54rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    section {
+      margin: 1.2rem 0;
+      padding: clamp(1.35rem, 4vw, 2.2rem);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: var(--paper);
+      box-shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .07);
+      backdrop-filter: blur(12px);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+    }
+
+    h3 {
+      margin: 1.6rem 0 .35rem;
+      font-size: 1.05rem;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
+
+    p, ul {
+      margin-top: .45rem;
+    }
+
+    .note {
+      padding: 1rem 1.1rem;
+      border-left: .3rem solid var(--accent);
+      border-radius: .35rem .9rem .9rem .35rem;
+      background: rgba(145, 206, 216, .2);
+    }
+
+    .contact {
+      display: grid;
+      gap: .9rem;
+    }
+
+    .contact .button {
+      justify-self: start;
+      color: white;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    footer {
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to main content</a>
+  <header>
+    <div class="hero">
+      <img class="shell" src="../assets/horagai.png" alt="A horagai used as a musical instrument">
+      <h1>Horagai</h1>
+      <p class="tagline">Blow well, make a good sound.</p>
+      <nav class="nav" aria-label="Page menu">
+        <a class="button" href="#howto">How to play</a>
+        <a class="button" href="#faq">FAQ</a>
+        <a class="button" href="#contact">Contact</a>
+        <a class="button" href="../" lang="ja" hreflang="ja">日本語</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section id="howto">
+      <h2>How to play</h2>
+      <ol>
+        <li>Microphone locations differ between devices. Hold your device so the horagai mouthpiece points toward a microphone that responds.</li>
+        <li>Keep your mouth a little way from the microphone.</li>
+        <li>Blow with a steady, moderate breath. You do not need to blow excessively hard.</li>
+        <li>Tilt your device slowly or shake it to explore changes in pitch.</li>
+      </ol>
+      <p class="note">Do not blow excessively hard into your device. Keep a little distance so moisture from your breath does not enter the microphone or charging port. Please be considerate of the people around you when playing loudly.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+
+      <h3>I blow, but no sound plays</h3>
+      <p>Make sure Horagai has permission to use the microphone in your device settings. After launch, keep the surroundings quiet for about 1.5 seconds while the app checks the ambient sound. Check where the microphone is on your device, then try a steady, moderate breath from a short distance instead of blowing hard. You can also open Settings from the horagai icon in the upper-right corner and select “Check sound” to test the speaker.</p>
+
+      <h3>Can I adjust the app to my breath?</h3>
+      <p>Open Settings from the horagai icon in the upper-right corner and choose “Match to my breath.” Follow the three short on-screen breaths. The horagai stays silent during this measurement.</p>
+
+      <h3>How do I change the pitch?</h3>
+      <p>Tilt your device forward or backward while playing. A quick shake also adds a brief pitch change. Device angle does not affect volume.</p>
+
+      <h3>Why do I hear a muted tap when I move the device?</h3>
+      <p>While you are not playing, an impact above the detection threshold can produce a muted, hand-drum-like sound, as though the shell were tapped. Avoid dropping or striking your device; enjoy this effect only with a gentle movement.</p>
+
+      <h3>Ads reappeared after I removed them</h3>
+      <p>Open Settings from the horagai icon and choose “Restore previous purchase.” You must use the same store account that made the original purchase.</p>
+
+      <h3>Can I record or save to the cloud?</h3>
+      <p>Version 1 does not provide recording, user-account, cloud-storage, or synchronization features.</p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p>Horagai does not save or transmit raw audio or motion input. Microphone input is converted to breath strength on your device, and tilt and motion are used only as playing controls.</p>
+      <p><a href="privacy.html">Read the full Privacy Policy</a></p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>For a problem or request, use the public GitHub contact page. Do not include personal information such as your name, email address, or purchase details.</p>
+      <a class="button" href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">Open the contact page</a>
+      <p>Please include your device model, operating-system version, and what happened, without adding personal information.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Horagai Version 0.2.0</p>
+    <p>Last updated: August 17, 2026</p>
+  </footer>
+</body>
+</html>
