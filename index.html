@@ -42,7 +42,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.75;
     }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
     a { color: var(--accent-dark); }
     a:focus-visible { outline: 3px solid #1c5f9c; outline-offset: 4px; }
     .skip { position: absolute; left: -9999px; }
@@ -75,7 +75,7 @@
     .feature p { margin: 0; }
     .screenshots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
     figure { margin: 0; }
-    .screen { width: 100%; border-radius: 1.3rem; border: 1px solid var(--line); box-shadow: 0 .7rem 1.6rem rgba(23,60,67,.12); }
+    .screen { width: 100%; height: auto; aspect-ratio: 660 / 1434; object-fit: contain; border-radius: 1.3rem; border: 1px solid var(--line); box-shadow: 0 .7rem 1.6rem rgba(23,60,67,.12); }
     figcaption { padding: .65rem .3rem 0; color: var(--muted); font-size: .9rem; text-align: center; }
     .steps { counter-reset: step; display: grid; gap: 1rem; margin: 1.5rem 0; padding: 0; list-style: none; }
     .steps li { position: relative; padding-left: 3.4rem; min-height: 2.6rem; }
@@ -111,6 +111,9 @@
       .screenshots { grid-template-columns: 1fr; max-width: 24rem; margin: 0 auto; }
       .developer { grid-template-columns: 1fr; text-align: center; }
       .developer-icon { margin: 0 auto; }
+    }
+    @media (max-width: 420px) {
+      .screenshots { max-width: 14rem; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
