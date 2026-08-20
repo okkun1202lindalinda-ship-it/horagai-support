@@ -3,10 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Horagai app support, playing tips, safety notes, privacy information, and contact details">
+  <meta name="description" content="Horagai is a playful Japanese conch-horn app. Blow, tilt, and shake your iPhone or iPad to find your own sound.">
   <meta name="theme-color" content="#91ced8">
-  <title>Horagai Support</title>
-  <link rel="icon" href="../assets/horagai.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Horagai | Blow, tilt, and play">
+  <meta property="og:description" content="A playful Japanese conch-horn app for iPhone and iPad. Find your own sound with breath and movement.">
+  <meta property="og:image" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/assets/ogp/horagai-ogp-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Horagai app with a horagai shell and the words Blow, tilt, and play.">
+  <meta property="og:url" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/en/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Horagai | Blow, tilt, and play</title>
+  <link rel="icon" href="../assets/developer-icon.webp" type="image/webp">
+  <link rel="canonical" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/en/">
+  <link rel="alternate" hreflang="en" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/en/">
+  <link rel="alternate" hreflang="ja" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <link rel="alternate" hreflang="x-default" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
   <style>
     :root {
       color-scheme: light;
@@ -14,9 +28,12 @@
       --water-soft: #dff3f6;
       --ink: #173c43;
       --muted: #527078;
-      --paper: rgba(255, 255, 255, 0.82);
-      --line: rgba(23, 60, 67, 0.14);
+      --paper: rgba(255, 255, 255, .86);
+      --paper-solid: #ffffff;
+      --line: rgba(23, 60, 67, .14);
       --accent: #246b75;
+      --accent-dark: #174e58;
+      --shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .08);
     }
 
     * {
@@ -31,14 +48,21 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 18% 8%, rgba(255,255,255,.5), transparent 30rem),
-        linear-gradient(180deg, var(--water) 0%, var(--water-soft) 64%, #f8fcfd 100%);
+        radial-gradient(circle at 18% 8%, rgba(255, 255, 255, .52), transparent 30rem),
+        linear-gradient(180deg, var(--water) 0%, var(--water-soft) 52%, #f8fcfd 100%);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.75;
     }
 
     a {
       color: var(--accent);
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: .2rem solid var(--accent-dark);
+      outline-offset: .2rem;
+      border-radius: .35rem;
     }
 
     .skip {
@@ -52,6 +76,7 @@
       z-index: 10;
       padding: .7rem 1rem;
       border-radius: .7rem;
+      color: var(--ink);
       background: white;
     }
 
@@ -59,99 +84,388 @@
       min-height: 72vh;
       display: grid;
       place-items: center;
-      padding: 5rem 1.25rem 3.5rem;
-      text-align: center;
+      padding: 4.5rem 1.25rem 3.5rem;
     }
 
     .hero {
-      width: min(42rem, 100%);
+      width: min(68rem, 100%);
     }
 
-    .shell {
-      width: min(30rem, 84vw);
-      height: auto;
-      filter: drop-shadow(0 1.1rem 1.4rem rgba(30, 68, 75, .16));
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(18rem, .95fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 38rem;
+    }
+
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 .65rem;
+      color: var(--accent-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 1rem 0 .25rem;
-      font-size: clamp(2.3rem, 9vw, 4.5rem);
+      margin: 0;
+      font-size: clamp(2.8rem, 9vw, 5.6rem);
       letter-spacing: .04em;
-      line-height: 1.2;
+      line-height: 1.05;
     }
 
     .tagline {
-      margin: .6rem 0 1.8rem;
+      margin: .7rem 0 1.4rem;
       font-size: clamp(1.05rem, 3.5vw, 1.35rem);
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .value-headline {
+      max-width: 35rem;
+      margin: 0 0 1rem;
+      font-size: clamp(1.6rem, 4.5vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .hero-description {
+      max-width: 35rem;
+      margin: 0 0 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-row,
+    .nav,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      align-items: center;
     }
 
     .nav {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: .7rem;
+      margin-top: 2rem;
     }
 
-    .button {
+    .button,
+    .store-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 3rem;
       padding: .65rem 1rem;
-      border: 1px solid rgba(255,255,255,.65);
+      border: 1px solid rgba(255, 255, 255, .68);
       border-radius: 999px;
       color: var(--ink);
-      background: rgba(255,255,255,.52);
+      background: rgba(255, 255, 255, .56);
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 750;
       backdrop-filter: blur(8px);
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+    }
+
+    .badge-link { display: inline-block; border-radius: .55rem; }
+    .store-badge { width: 11.4rem; height: auto; }
+
+    .button:hover,
+    .store-button:hover {
+      transform: translateY(-.12rem);
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 .5rem 1rem rgba(30, 68, 75, .1);
+    }
+
+    .store-button {
+      min-height: 3.5rem;
+      padding: .55rem 1.15rem;
+      color: white;
+      border-color: var(--accent-dark);
+      background: var(--accent);
+      box-shadow: 0 .55rem 1.1rem rgba(23, 78, 88, .2);
+    }
+
+    .store-button:hover {
+      color: white;
+      background: var(--accent-dark);
+    }
+
+    .store-mark {
+      margin-right: .6rem;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .small-note {
+      margin: .7rem 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .hero-visual {
+      display: grid;
+      justify-items: center;
+      gap: 1.25rem;
+    }
+
+    .shell {
+      width: min(21rem, 75vw);
+      height: auto;
+      filter: drop-shadow(0 1.1rem 1.4rem rgba(30, 68, 75, .16));
+    }
+
+    .hero-shot {
+      width: min(13rem, 55vw);
+      margin: -2rem 0 0;
+      padding: .45rem;
+      border: 1px solid rgba(255, 255, 255, .75);
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, .5);
+      box-shadow: 0 1rem 2rem rgba(30, 68, 75, .14);
+      transform: rotate(3deg);
+    }
+
+    .hero-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 1.1rem;
     }
 
     main {
-      width: min(54rem, calc(100% - 2rem));
+      width: min(68rem, calc(100% - 2rem));
       margin: 0 auto;
       padding-bottom: 4rem;
     }
 
     section {
       margin: 1.2rem 0;
-      padding: clamp(1.35rem, 4vw, 2.2rem);
+      padding: clamp(1.35rem, 4vw, 2.5rem);
       border: 1px solid var(--line);
       border-radius: 1.5rem;
       background: var(--paper);
-      box-shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .07);
+      box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
+      scroll-margin-top: 1rem;
+    }
+
+    .section-intro {
+      max-width: 45rem;
+      margin-bottom: 1.6rem;
     }
 
     h2 {
       margin: 0 0 1rem;
-      font-size: clamp(1.45rem, 5vw, 2rem);
+      font-size: clamp(1.45rem, 5vw, 2.15rem);
+      line-height: 1.25;
     }
 
     h3 {
-      margin: 1.6rem 0 .35rem;
-      font-size: 1.05rem;
+      margin: 0 0 .35rem;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
-    h3:first-of-type {
-      margin-top: 0;
-    }
-
-    p, ul {
+    p,
+    ul,
+    ol {
       margin-top: .45rem;
     }
 
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, .62);
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 2.6rem;
+      height: 2.6rem;
+      margin-bottom: .75rem;
+      place-items: center;
+      border-radius: .85rem;
+      color: white;
+      background: var(--accent);
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .screen-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.7rem;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .screen-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--paper-solid);
+      box-shadow: 0 .5rem 1rem rgba(30, 68, 75, .08);
+    }
+
+    figcaption {
+      margin-top: .55rem;
+      color: var(--muted);
+      font-size: .9rem;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      position: relative;
+      min-height: 8rem;
+      padding: 3.15rem 1rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, .62);
+      counter-increment: step;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      top: .8rem;
+      left: 1rem;
+      display: grid;
+      width: 1.8rem;
+      height: 1.8rem;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--accent);
+      font-weight: 800;
+    }
+
     .note {
+      margin: 1.3rem 0 0;
       padding: 1rem 1.1rem;
       border-left: .3rem solid var(--accent);
       border-radius: .35rem .9rem .9rem .35rem;
       background: rgba(145, 206, 216, .2);
     }
 
+    .pricing-grid,
+    .developer-grid,
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .price-card,
+    .developer-card,
+    .detail-card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, .62);
+    }
+
+    .price {
+      margin: .2rem 0 .7rem;
+      font-size: 1.45rem;
+      font-weight: 800;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .spec-list {
+      display: grid;
+      gap: .5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .spec-list li {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: .7rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .spec-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .spec-list strong {
+      color: var(--accent-dark);
+    }
+
+    .developer-card {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .developer-card .mini-shell {
+      width: 4.7rem;
+      height: 4.7rem;
+      flex: 0 0 auto;
+      object-fit: contain;
+      padding: .45rem;
+      border-radius: 1.15rem;
+      background: var(--water-soft);
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+    }
+
+    details:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 1rem 2rem 1rem 0;
+      font-weight: 750;
+      list-style-position: outside;
+    }
+
+    details p {
+      max-width: 56rem;
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
     .contact {
       display: grid;
-      gap: .9rem;
+      gap: .8rem;
     }
 
     .contact .button {
@@ -161,6 +475,19 @@
       background: var(--accent);
     }
 
+    .closing-cta {
+      text-align: center;
+    }
+
+    .closing-cta p {
+      max-width: 38rem;
+      margin: 0 auto 1.2rem;
+    }
+
+    .closing-cta .store-button {
+      margin: 0 auto;
+    }
+
     footer {
       padding: 2rem 1rem 3rem;
       color: var(--muted);
@@ -168,21 +495,113 @@
       font-size: .9rem;
     }
 
+    .footer-links {
+      justify-content: center;
+      margin-bottom: .75rem;
+    }
+
+    .footer-links a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid,
+      .feature-grid,
+      .steps,
+      .pricing-grid,
+      .developer-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+        padding-top: 3rem;
+      }
+
+      .hero-copy {
+        max-width: none;
+        text-align: center;
+      }
+
+      .hero-description,
+      .cta-row {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .cta-row {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        margin-top: .5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .screen-gallery {
+        grid-template-columns: 1fr;
+        width: min(14rem, 100%);
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .spec-list li {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .developer-card {
+        align-items: flex-start;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+
+      .button,
+      .store-button {
+        transition: none;
+      }
+
+      .button:hover,
+      .store-button:hover {
+        transform: none;
       }
     }
   </style>
 </head>
 <body>
   <a class="skip" href="#content">Skip to main content</a>
+
   <header>
     <div class="hero">
-      <img class="shell" src="../assets/horagai.png" alt="A horagai used as a musical instrument">
-      <h1>Horagai</h1>
-      <p class="tagline">Blow well, make a good sound.</p>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">A playful Japanese conch horn for iPhone and iPad</p>
+          <h1>Horagai</h1>
+          <p class="tagline">Blow well, make a good sound.</p>
+          <h2 class="value-headline">Blow, tilt, and play a horagai on your phone.</h2>
+          <p class="hero-description">Send a steady breath toward your device's microphone, then tilt or shake your phone to explore pitch. Horagai is a small, surprising sound toy for finding a sound of your own.</p>
+          <div class="cta-row">
+            <a class="badge-link" href="https://apps.apple.com/app/id6795740681" target="_blank" rel="noopener" aria-label="Download Horagai on the App Store"><img class="store-badge" src="../assets/badges/app-store-en.svg" alt="Download on the App Store"></a>
+          </div>
+          <p class="small-note">Free to download · iPhone and iPad · iOS/iPadOS 13 or later</p>
+        </div>
+
+        <div class="hero-visual">
+          <img class="shell" src="../assets/horagai.webp" alt="A horagai shell used as a musical instrument" width="1024" height="1536">
+          <figure class="hero-shot">
+            <img src="../assets/screenshots/home-en.webp" alt="Horagai app home screen" width="660" height="1434" fetchpriority="high">
+          </figure>
+        </div>
+      </div>
+
       <nav class="nav" aria-label="Page menu">
+        <a class="button" href="#features">What you can do</a>
         <a class="button" href="#howto">How to play</a>
         <a class="button" href="#faq">FAQ</a>
         <a class="button" href="#contact">Contact</a>
@@ -192,56 +611,195 @@
   </header>
 
   <main id="content">
-    <section id="howto">
-      <h2>How to play</h2>
-      <ol>
-        <li>Microphone locations differ between devices. Hold your device so the horagai mouthpiece points toward a microphone that responds.</li>
-        <li>Keep your mouth a little way from the microphone.</li>
-        <li>Blow with a steady, moderate breath. You do not need to blow excessively hard.</li>
-        <li>Tilt your device slowly or shake it to explore changes in pitch.</li>
-      </ol>
-      <p class="note">Do not blow excessively hard into your device. Keep a little distance so moisture from your breath does not enter the microphone or charging port. Please be considerate of the people around you when playing loudly.</p>
+    <section id="features">
+      <p class="section-kicker">Why Horagai</p>
+      <h2>Find a sound with your breath and movement.</h2>
+      <p class="section-intro">A real horagai takes practice and a physical shell. This app gives you a simple way to try the feeling of making sound with a phone—without promising that every breath will behave the same way.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">≈</span>
+          <h3>Let breath shape the volume</h3>
+          <p>Point the mouthpiece toward a responding microphone and send a steady, moderate breath. Breath strength changes the volume.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">↗</span>
+          <h3>Tilt and shake to move pitch</h3>
+          <p>Tilt the device forward or backward to explore lower and higher sounds. A quick, gentle shake adds a short change in pitch.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon" aria-hidden="true">✦</span>
+          <h3>Make the screen feel like yours</h3>
+          <p>Drag, resize, and rotate the horagai on screen. Its visual position does not change how the sound responds.</p>
+        </article>
+      </div>
+
+      <div class="screen-gallery" aria-label="Horagai app screens">
+        <figure>
+          <img src="../assets/screenshots/home-en.webp" alt="Horagai home screen with the shell ready to play" width="660" height="1434" loading="lazy">
+          <figcaption>Open and play</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/help-en.webp" alt="Horagai help screen showing breath and movement tips" width="660" height="1434" loading="lazy">
+          <figcaption>Review playing tips</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/settings-en.webp" alt="Horagai settings screen with sound and purchase options" width="660" height="1434" loading="lazy">
+          <figcaption>Adjust and restore</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section id="faq">
-      <h2>Frequently asked questions</h2>
+    <section id="howto">
+      <p class="section-kicker">Start in three steps</p>
+      <h2>How to play</h2>
+      <ol class="steps">
+        <li>Find the microphone that responds on your iPhone or iPad, and point the horagai mouthpiece toward it.</li>
+        <li>Keep a little distance from the microphone. Blow with a steady, moderate breath rather than blowing as hard as possible.</li>
+        <li>When a sound appears, tilt the device slowly or give it a gentle shake to explore pitch changes.</li>
+      </ol>
+      <p class="note"><strong>Play safely:</strong> Do not blow excessively hard into your device. Keep breath moisture away from the microphone and charging port by leaving a little distance. Please be considerate of people, places, and times when playing loudly.</p>
+    </section>
 
-      <h3>I blow, but no sound plays</h3>
-      <p>Make sure Horagai has permission to use the microphone in your device settings. After launch, keep the surroundings quiet for about 1.5 seconds while the app checks the ambient sound. Check where the microphone is on your device, then try a steady, moderate breath from a short distance instead of blowing hard. You can also open Settings from the horagai icon in the upper-right corner and select “Check sound” to test the speaker.</p>
+    <section id="pricing">
+      <p class="section-kicker">Simple pricing</p>
+      <h2>Free to try. One purchase to remove ads.</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Horagai</h3>
+          <p class="price">Free <small>to download</small></p>
+          <p>Play the core experience without a subscription. The free version shows ads in Settings and while caring for your horagai.</p>
+        </div>
+        <div class="price-card">
+          <h3>Remove Ads</h3>
+          <p class="price">One-time purchase <small>not a subscription</small></p>
+          <p>Hide all ads with one non-consumable in-app purchase. The Japan App Store currently lists it at ¥100; your App Store displays the current price for your region.</p>
+        </div>
+      </div>
+      <p class="note">The store handles payment details and purchase restoration. If you have already purchased Remove Ads, use the same Apple Account to restore it from the app's Settings.</p>
+    </section>
 
-      <h3>Can I adjust the app to my breath?</h3>
-      <p>Open Settings from the horagai icon in the upper-right corner and choose “Match to my breath.” Follow the three short on-screen breaths. The horagai stays silent during this measurement.</p>
-
-      <h3>How do I change the pitch?</h3>
-      <p>Tilt your device forward or backward while playing. A quick shake also adds a brief pitch change. Device angle does not affect volume.</p>
-
-      <h3>Why do I hear a muted tap when I move the device?</h3>
-      <p>While you are not playing, an impact above the detection threshold can produce a muted, hand-drum-like sound, as though the shell were tapped. Avoid dropping or striking your device; enjoy this effect only with a gentle movement.</p>
-
-      <h3>Ads reappeared after I removed them</h3>
-      <p>Open Settings from the horagai icon and choose “Restore previous purchase.” You must use the same store account that made the original purchase.</p>
-
-      <h3>Can I record or save to the cloud?</h3>
-      <p>Version 1 does not provide recording, user-account, cloud-storage, or synchronization features.</p>
+    <section id="details">
+      <p class="section-kicker">At a glance</p>
+      <h2>What to expect</h2>
+      <div class="detail-grid">
+        <div class="detail-card">
+          <ul class="spec-list">
+            <li><strong>Devices</strong><span>iPhone and iPad</span></li>
+            <li><strong>OS</strong><span>iOS/iPadOS 13 or later</span></li>
+            <li><strong>Accounts</strong><span>No account or sign-in</span></li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <ul class="spec-list">
+            <li><strong>Playing</strong><span>Playing itself usually works without a network connection.</span></li>
+            <li><strong>Network</strong><span>Ads, purchase checks, and purchase restoration may need an internet connection.</span></li>
+            <li><strong>Saving</strong><span>No recording or cloud storage</span></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="privacy">
-      <h2>Privacy</h2>
-      <p>Horagai does not save or transmit raw audio or motion input. Microphone input is converted to breath strength on your device, and tilt and motion are used only as playing controls.</p>
+      <p class="section-kicker">Your data</p>
+      <h2>Designed to keep playing data on your device.</h2>
+      <p>Horagai does not save or transmit raw audio or motion input. Microphone input is converted to breath strength on your device, while tilt and motion are used only as playing controls. The app has no recording, user account, or cloud-storage features.</p>
+      <p>When ads are enabled, the advertising provider may process information needed for ad delivery, measurement, and fraud prevention. You can read the details, including advertising choices, in the full policy.</p>
       <p><a href="privacy.html">Read the full Privacy Policy</a></p>
     </section>
 
+    <section id="developer">
+      <p class="section-kicker">Made by one person</p>
+      <h2>A small app with a human behind it.</h2>
+      <div class="developer-grid">
+        <div class="developer-card">
+          <img class="mini-shell" src="../assets/developer-icon.webp" alt="" width="400" height="400">
+          <div>
+            <h3>Takumi Yoshikawa</h3>
+            <p>Independent developer making small apps that invite you to touch, listen, and try something unexpected.</p>
+            <a href="https://x.com/noi_mage3" target="_blank" rel="noopener">Follow @noi_mage3 on X</a>
+          </div>
+        </div>
+        <div class="developer-card">
+          <div>
+            <h3>Why this app exists</h3>
+            <p>Horagai is an experiment in turning a phone's microphone and motion sensors into a playful musical moment. It is not a replacement for a physical shell or formal instrument lessons.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <p class="section-kicker">Questions, answered</p>
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>I blow, but no sound plays. What should I try?</summary>
+        <p>Check that Horagai has permission to use the microphone. After launch, keep the surroundings quiet for about 1.5 seconds while the app checks ambient sound. Confirm the microphone location on your device, keep a little distance, and try a steady, moderate breath rather than blowing hard. You can open Settings from the horagai icon in the upper-right corner and choose “Check sound” to test the speaker.</p>
+      </details>
+
+      <details>
+        <summary>Can I adjust the app to my breath?</summary>
+        <p>Open Settings from the horagai icon in the upper-right corner and choose “Match to my breath.” Follow the short on-screen breaths. The horagai stays silent while it measures.</p>
+      </details>
+
+      <details>
+        <summary>How do I change the pitch?</summary>
+        <p>Tilt your device forward or backward while playing. A quick, gentle shake also adds a brief pitch change. The device angle does not change volume.</p>
+      </details>
+
+      <details>
+        <summary>Does the app always make a sound?</summary>
+        <p>No. Device microphones, surroundings, breath, and timing all affect the result. The app is designed as a playful sound experiment, not as a promise that every breath will produce a particular note.</p>
+      </details>
+
+      <details>
+        <summary>Do I need an internet connection?</summary>
+        <p>Playing itself usually works without a network connection. Ads, purchase status checks, and purchase restoration may need an internet connection.</p>
+      </details>
+
+      <details>
+        <summary>Can I record or save my playing to the cloud?</summary>
+        <p>Not in the current version. Horagai does not provide recording, user accounts, cloud storage, or synchronization.</p>
+      </details>
+
+      <details>
+        <summary>How do I restore Remove Ads?</summary>
+        <p>Open Settings from the horagai icon and choose “Restore previous purchase.” Use the same Apple Account that made the original purchase.</p>
+      </details>
+
+      <details>
+        <summary>Is there an Android version?</summary>
+        <p>This page currently covers the iPhone and iPad release. An Android download is not listed here.</p>
+      </details>
+    </section>
+
     <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>For a problem or request, use the public GitHub contact page. Do not include personal information such as your name, email address, or purchase details.</p>
-      <a class="button" href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">Open the contact page</a>
-      <p>Please include your device model, operating-system version, and what happened, without adding personal information.</p>
+      <p class="section-kicker">Need help?</p>
+      <h2>Contact the developer</h2>
+      <p>For a problem or request, use the public GitHub contact page. Please do not include your name, email address, purchase details, or other personal information in a public issue.</p>
+      <a class="button" href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" target="_blank" rel="noopener">Open the contact page</a>
+      <p>When useful, include your device model, operating-system version, and what happened. You can also reach the developer on <a href="https://x.com/noi_mage3" target="_blank" rel="noopener">X @noi_mage3</a>.</p>
+    </section>
+
+    <section id="download" class="closing-cta">
+      <p class="section-kicker">Ready to try?</p>
+      <h2>Find your own sound, one breath at a time.</h2>
+      <p>Download Horagai for free and see what happens when breath, movement, and a phone meet.</p>
+      <a class="badge-link" href="https://apps.apple.com/app/id6795740681" target="_blank" rel="noopener" aria-label="Download Horagai on the App Store"><img class="store-badge" src="../assets/badges/app-store-en.svg" alt="Download on the App Store"></a>
     </section>
   </main>
 
   <footer>
-    <p>Horagai Version 0.2.0</p>
-    <p>Last updated: August 17, 2026</p>
+    <nav class="footer-links" aria-label="Legal and contact links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="#contact">Contact</a>
+      <a href="https://x.com/noi_mage3" target="_blank" rel="noopener">X @noi_mage3</a>
+      <a href="../" lang="ja" hreflang="ja">日本語</a>
+    </nav>
+    <p>Horagai Version 0.2.0 · iPhone and iPad · iOS/iPadOS 13 or later</p>
+    <p>Last updated: August 20, 2026</p>
   </footer>
 </body>
 </html>

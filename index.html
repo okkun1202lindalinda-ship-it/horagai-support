@@ -3,10 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="法螺貝アプリの使い方、よくある質問、安全上の注意、お問い合わせ">
+  <meta name="description" content="iPhoneやiPadへ息を吹きかけ、傾けたり振ったりして法螺貝の音を楽しむ無料楽器アプリ。録音やアカウント登録は不要です。">
   <meta name="theme-color" content="#91ced8">
-  <title>法螺貝 サポート</title>
-  <link rel="icon" href="assets/horagai.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="法螺貝｜息を吹いて鳴らすスマホ楽器アプリ">
+  <meta property="og:description" content="吹いて、傾けて、スマホで法螺貝を鳴らそう。">
+  <meta property="og:url" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <meta property="og:image" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/assets/ogp/horagai-ogp-ja.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="水色の背景に法螺貝と、吹いて傾けて演奏するアプリの紹介文">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <link rel="alternate" hreflang="ja" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <link rel="alternate" hreflang="en" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/en/">
+  <link rel="alternate" hreflang="x-default" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <title>法螺貝｜息を吹いて鳴らすスマホ楽器アプリ</title>
+  <link rel="icon" href="assets/developer-icon.webp" type="image/webp">
   <style>
     :root {
       color-scheme: light;
@@ -14,234 +28,186 @@
       --water-soft: #dff3f6;
       --ink: #173c43;
       --muted: #527078;
-      --paper: rgba(255, 255, 255, 0.82);
-      --line: rgba(23, 60, 67, 0.14);
-      --accent: #246b75;
+      --paper: rgba(255, 255, 255, .9);
+      --line: rgba(23, 60, 67, .14);
+      --accent: #087a75;
+      --accent-dark: #075e5b;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 18% 8%, rgba(255,255,255,.5), transparent 30rem),
-        linear-gradient(180deg, var(--water) 0%, var(--water-soft) 64%, #f8fcfd 100%);
+      background: radial-gradient(circle at 18% 5%, rgba(255,255,255,.62), transparent 32rem), linear-gradient(180deg, var(--water) 0%, var(--water-soft) 52%, #f8fcfd 100%);
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.75;
     }
-
-    a {
-      color: var(--accent);
+    img { display: block; max-width: 100%; }
+    a { color: var(--accent-dark); }
+    a:focus-visible { outline: 3px solid #1c5f9c; outline-offset: 4px; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 20; padding: .7rem 1rem; border-radius: .7rem; background: white; }
+    .topbar { width: min(72rem, calc(100% - 2rem)); margin: 0 auto; padding: 1rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font-weight: 800; text-decoration: none; }
+    .brand img { width: 2.5rem; height: 2.5rem; object-fit: contain; }
+    .language { padding: .45rem .8rem; border: 1px solid rgba(255,255,255,.7); border-radius: 999px; background: rgba(255,255,255,.5); text-decoration: none; font-weight: 700; }
+    header { padding: 2.3rem 1rem 5rem; }
+    .hero { width: min(72rem, 100%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(17rem, .82fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .eyebrow { margin: 0 0 .7rem; color: var(--accent-dark); font-size: .88rem; font-weight: 800; letter-spacing: .1em; }
+    h1 { margin: 0; font-size: clamp(3rem, 10vw, 6.2rem); line-height: 1; letter-spacing: .08em; }
+    .tagline { margin: 1rem 0 .25rem; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 750; }
+    .hero h2 { margin: 1.15rem 0 .85rem; max-width: 15em; font-size: clamp(1.65rem, 4.3vw, 2.9rem); line-height: 1.35; }
+    .lead { max-width: 40rem; margin: 0 0 1.6rem; font-size: 1.05rem; }
+    .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+    .store-badge { width: 11.4rem; height: auto; }
+    .support-link { font-weight: 750; }
+    .hero-visual { position: relative; display: grid; place-items: center; min-height: 30rem; }
+    .hero-visual::before { content: ""; position: absolute; width: min(29rem, 78vw); aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(255,255,255,.45); }
+    .shell { position: relative; width: min(25rem, 78vw); max-height: 35rem; object-fit: contain; filter: drop-shadow(0 1.3rem 1.4rem rgba(30, 68, 75, .18)); transform: rotate(-5deg); }
+    main { width: min(72rem, calc(100% - 2rem)); margin: 0 auto; padding-bottom: 4rem; }
+    section { margin: 1.3rem 0; padding: clamp(1.5rem, 4.5vw, 3.1rem); border: 1px solid var(--line); border-radius: 1.6rem; background: var(--paper); box-shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .07); backdrop-filter: blur(12px); }
+    section > h2 { margin: 0 0 .85rem; font-size: clamp(1.65rem, 5vw, 2.45rem); line-height: 1.35; }
+    .section-lead { max-width: 50rem; margin: 0 0 1.7rem; color: var(--muted); font-size: 1.02rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .feature { padding: 1.35rem; border: 1px solid var(--line); border-radius: 1.2rem; background: rgba(223,243,246,.52); }
+    .feature-number { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border-radius: 50%; color: white; background: var(--accent); font-weight: 800; }
+    .feature h3 { margin: .75rem 0 .35rem; font-size: 1.18rem; }
+    .feature p { margin: 0; }
+    .screenshots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    figure { margin: 0; }
+    .screen { width: 100%; border-radius: 1.3rem; border: 1px solid var(--line); box-shadow: 0 .7rem 1.6rem rgba(23,60,67,.12); }
+    figcaption { padding: .65rem .3rem 0; color: var(--muted); font-size: .9rem; text-align: center; }
+    .steps { counter-reset: step; display: grid; gap: 1rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+    .steps li { position: relative; padding-left: 3.4rem; min-height: 2.6rem; }
+    .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 2.55rem; height: 2.55rem; border-radius: 50%; color: white; background: var(--accent); font-weight: 800; }
+    .note { padding: 1rem 1.15rem; border-left: .3rem solid var(--accent); border-radius: .35rem .9rem .9rem .35rem; background: rgba(145,206,216,.22); }
+    .price { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 1.7rem; align-items: center; background: linear-gradient(145deg, rgba(255,250,240,.96), rgba(255,255,255,.92)); }
+    .price-card { text-align: center; padding: 1.3rem; border-radius: 1.2rem; background: white; border: 1px solid var(--line); }
+    .price-card strong { display: block; font-size: clamp(2rem, 7vw, 3.8rem); line-height: 1.2; }
+    .price-card span { color: var(--muted); }
+    .privacy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .privacy-item { padding: 1.1rem; border-radius: 1rem; background: rgba(223,243,246,.52); }
+    .privacy-item strong { display: block; margin-bottom: .25rem; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { padding: 1rem .2rem; cursor: pointer; font-weight: 750; }
+    details p { margin: 0; padding: 0 .2rem 1rem; }
+    .developer { display: grid; grid-template-columns: auto 1fr; gap: 1.35rem; align-items: center; }
+    .developer-icon { width: 6rem; height: 6rem; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,.8); }
+    .developer h2 { margin: 0 0 .35rem; }
+    .developer p { margin: .3rem 0; }
+    .final-cta { text-align: center; background: linear-gradient(145deg, rgba(145,206,216,.7), rgba(255,255,255,.92)); }
+    .final-cta .store-badge { margin: 1.2rem auto 0; }
+    footer { padding: 2rem 1rem 3rem; color: var(--muted); text-align: center; font-size: .9rem; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 1.2rem; margin-bottom: 1rem; }
+    .footer-links a { font-weight: 700; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero h2, .lead { margin-left: auto; margin-right: auto; }
+      .cta-row { justify-content: center; }
+      .hero-visual { min-height: 23rem; order: -1; }
+      .shell { width: min(20rem, 76vw); }
+      .feature-grid, .privacy-grid, .price { grid-template-columns: 1fr; }
+      .screenshots { grid-template-columns: 1fr; max-width: 24rem; margin: 0 auto; }
+      .developer { grid-template-columns: 1fr; text-align: center; }
+      .developer-icon { margin: 0 auto; }
     }
-
-    .skip {
-      position: absolute;
-      left: -9999px;
-    }
-
-    .skip:focus {
-      left: 1rem;
-      top: 1rem;
-      z-index: 10;
-      padding: .7rem 1rem;
-      border-radius: .7rem;
-      background: white;
-    }
-
-    header {
-      min-height: 72vh;
-      display: grid;
-      place-items: center;
-      padding: 5rem 1.25rem 3.5rem;
-      text-align: center;
-    }
-
-    .hero {
-      width: min(42rem, 100%);
-    }
-
-    .shell {
-      width: min(30rem, 84vw);
-      height: auto;
-      filter: drop-shadow(0 1.1rem 1.4rem rgba(30, 68, 75, .16));
-    }
-
-    h1 {
-      margin: 1rem 0 .25rem;
-      font-size: clamp(2.3rem, 9vw, 4.5rem);
-      letter-spacing: .08em;
-      line-height: 1.2;
-    }
-
-    .tagline {
-      margin: .6rem 0 1.8rem;
-      font-size: clamp(1.05rem, 3.5vw, 1.35rem);
-      font-weight: 600;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .7rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3rem;
-      padding: .65rem 1rem;
-      border: 1px solid rgba(255,255,255,.65);
-      border-radius: 999px;
-      color: var(--ink);
-      background: rgba(255,255,255,.52);
-      text-decoration: none;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-    }
-
-    main {
-      width: min(54rem, calc(100% - 2rem));
-      margin: 0 auto;
-      padding-bottom: 4rem;
-    }
-
-    section {
-      margin: 1.2rem 0;
-      padding: clamp(1.35rem, 4vw, 2.2rem);
-      border: 1px solid var(--line);
-      border-radius: 1.5rem;
-      background: var(--paper);
-      box-shadow: 0 .8rem 2.2rem rgba(30, 68, 75, .07);
-      backdrop-filter: blur(12px);
-    }
-
-    h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(1.45rem, 5vw, 2rem);
-    }
-
-    h3 {
-      margin: 1.6rem 0 .35rem;
-      font-size: 1.05rem;
-    }
-
-    h3:first-of-type {
-      margin-top: 0;
-    }
-
-    p, ul {
-      margin-top: .45rem;
-    }
-
-    .note {
-      padding: 1rem 1.1rem;
-      border-left: .3rem solid var(--accent);
-      border-radius: .35rem .9rem .9rem .35rem;
-      background: rgba(145, 206, 216, .2);
-    }
-
-    .contact {
-      display: grid;
-      gap: .9rem;
-    }
-
-    .contact .button {
-      justify-self: start;
-      color: white;
-      border-color: var(--accent);
-      background: var(--accent);
-    }
-
-    footer {
-      padding: 2rem 1rem 3rem;
-      color: var(--muted);
-      text-align: center;
-      font-size: .9rem;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
   <a class="skip" href="#content">本文へ移動</a>
+  <nav class="topbar" aria-label="サイトメニュー">
+    <a class="brand" href="./"><img src="assets/horagai.webp" alt=""><span>法螺貝</span></a>
+    <a class="language" href="en/" lang="en" hreflang="en">English</a>
+  </nav>
   <header>
     <div class="hero">
-      <img class="shell" src="assets/horagai.png" alt="楽器としての法螺貝">
-      <h1>法螺貝</h1>
-      <p class="tagline">上手に吹くと、良い音が出ます。</p>
-      <nav class="nav" aria-label="ページ内メニュー">
-        <a class="button" href="#howto">吹き方</a>
-        <a class="button" href="#faq">よくある質問</a>
-        <a class="button" href="#contact">お問い合わせ</a>
-        <a class="button" href="en/" lang="en" hreflang="en">English</a>
-      </nav>
+      <div>
+        <p class="eyebrow">息と動きで鳴らす、手のひらの楽器</p>
+        <h1>法螺貝</h1>
+        <p class="tagline">上手に吹くと、良い音が出ます。</p>
+        <h2>吹いて、傾けて、スマホで法螺貝を鳴らそう。</h2>
+        <p class="lead">「法螺貝」は、iPhoneやiPadへ息を吹きかけて楽しむ小さな楽器アプリです。うまく鳴る時も、鳴らない時も、あなただけの一音を探してみてください。</p>
+        <div class="cta-row">
+          <a href="https://apps.apple.com/jp/app/id6795740681" aria-label="App Storeで法螺貝をダウンロード"><img class="store-badge" src="assets/badges/app-store-ja.svg" alt="App Storeからダウンロード"></a>
+          <a class="support-link" href="#faq">サポートを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual"><img class="shell" src="assets/horagai.webp" width="1024" height="1536" alt="黒い歌口を付けた楽器としての法螺貝"></div>
     </div>
   </header>
-
   <main id="content">
-    <section id="howto">
-      <h2>吹き方</h2>
-      <ol>
-        <li>マイクの位置は機種で異なります。端末の反応するマイクと法螺貝の歌口が近い向きで持ちます。</li>
-        <li>マイクへ口を近づけすぎず、少し距離をあけます。</li>
-        <li>強すぎない、ほどよい息を一定に吹きかけます。</li>
-        <li>端末をゆっくり傾けたり、振ったりして音の変化を楽しみます。</li>
+    <section aria-labelledby="value-heading">
+      <h2 id="value-heading">本物の法螺貝がなくても、音を鳴らす感覚を楽しめます。</h2>
+      <p>法螺貝に興味があっても、本物を用意して音を出すのは簡単ではありません。このアプリなら、スマートフォンへ息を吹きかけ、傾けたり振ったりするだけで、法螺貝の音を探す遊びを気軽に始められます。</p>
+      <p>毎回同じように鳴るとは限りません。その少し不思議な手応えも、このアプリの楽しさです。</p>
+    </section>
+    <section id="features" aria-labelledby="features-heading">
+      <h2 id="features-heading">4つの楽しみ方</h2><p class="section-lead">難しい設定を覚えるより、まずは吹いて、動かしてみてください。</p>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-number">1</span><h3>息で音を鳴らす</h3><p>歌口を端末のマイクへ向け、ほどよい息を送ります。息の強さに合わせて音量が変わります。</p></article>
+        <article class="feature"><span class="feature-number">2</span><h3>傾けて、振って、音程を変える</h3><p>端末を前後へ傾けると音程が変わります。素早く振ると、一時的な音の揺らぎが加わります。</p></article>
+        <article class="feature"><span class="feature-number">3</span><h3>鳴ったり、鳴らなかったり</h3><p>いつでも同じ音が出るとは限りません。うまく鳴った時の気持ちよさも、鳴らない時の面白さも楽しめます。</p></article>
+        <article class="feature"><span class="feature-number">4</span><h3>好きな構えで遊ぶ</h3><p>画面の法螺貝は、移動、拡大縮小、回転ができます。見た目の配置は音の鳴り方に影響しません。</p></article>
+      </div>
+    </section>
+    <section aria-labelledby="screens-heading">
+      <h2 id="screens-heading">画面は、法螺貝が主役。</h2><p class="section-lead">必要な案内は「？」と設定画面へまとめ、演奏画面には大きな法螺貝だけを置きました。</p>
+      <div class="screenshots">
+        <figure><img class="screen" src="assets/screenshots/home-ja.webp" width="660" height="1434" loading="lazy" alt="水色の背景に大きな法螺貝を表示した演奏画面"><figcaption>吹いたら、傾けて音を探す</figcaption></figure>
+        <figure><img class="screen" src="assets/screenshots/help-ja.webp" width="660" height="1434" loading="lazy" alt="吹き方と安全上の注意を表示した画面"><figcaption>吹き方と安全上の注意</figcaption></figure>
+        <figure><img class="screen" src="assets/screenshots/settings-ja.webp" width="660" height="1434" loading="lazy" alt="息合わせ、広告削除、プライバシー情報を表示した設定画面"><figcaption>息合わせと広告削除</figcaption></figure>
+      </div>
+    </section>
+    <section id="howto" aria-labelledby="howto-heading">
+      <h2 id="howto-heading">3ステップで吹いてみる</h2>
+      <ol class="steps">
+        <li><strong>歌口をマイクへ向ける。</strong><br>マイクの位置は機種で異なります。端末の反応する方向へ法螺貝を回転できます。</li>
+        <li><strong>ほどよい息を一定に送る。</strong><br>口を近づけすぎず、端末から少し距離をあけて吹きます。</li>
+        <li><strong>傾けたり、振ったりする。</strong><br>音が鳴ったら、端末の動きで音程の変化を楽しみます。</li>
       </ol>
-      <p class="note">強すぎる息を直接当て続けないでください。呼気の水分がマイクや充電端子へ入らないよう、端末から少し距離をあけてお楽しみください。大きな音を出すときは周囲へご配慮ください。</p>
+      <p class="note"><strong>安全に楽しむために：</strong>強すぎる息を直接当て続けないでください。呼気の水分がマイクや充電端子へ入らないよう、端末から少し距離をあけてください。大きな音を出す時は、周囲の人や場所、時間帯へご配慮ください。</p>
     </section>
-
-    <section id="faq">
-      <h2>よくある質問</h2>
-
-      <h3>息を吹いても鳴りません</h3>
-      <p>設定アプリで法螺貝のマイク利用が許可されているか確認してください。起動後の周囲音の確認中は約1.5秒間静かにし、マイク位置を確認してください。弱すぎる息では鳴らないことがあります。強く吹き込み続けるのではなく、端末から少し距離をあけて、ほどよい息を一定に当ててみてください。スピーカー自体は、アプリ右上の設定から「音を確認」を押して確認できます。</p>
-
-      <h3>自分に合う吹き方へ調整できますか</h3>
-      <p>アプリ右上の法螺貝アイコンから設定を開き、「自分の息に合わせる」をお試しください。</p>
-
-      <h3>音程を変えるにはどうしますか</h3>
-      <p>演奏中に端末を前後へ傾けると音程が変わります。素早く振る動きでも、一時的な音の変化を楽しめます。端末の向きは音量には影響しません。</p>
-
-      <h3>端末を叩いたときだけ「ポン」と鳴ります</h3>
-      <p>演奏していないときに一定以上の衝撃を検出すると、法螺貝を叩いたような鼓風の音が鳴ります。端末の落下や強い衝撃は故障の原因になるため、軽い動きの範囲でお楽しみください。</p>
-
-      <h3>広告をなくしたのに再び表示されます</h3>
-      <p>右上の法螺貝アイコンから設定を開き、「以前の購入を復元」を選んでください。購入に使用したApple Accountでの確認が必要です。</p>
-
-      <h3>録音やクラウド保存はできますか</h3>
-      <p>バージョン1では、録音、利用者アカウント、クラウド保存・同期には対応していません。</p>
+    <section class="price" id="price" aria-labelledby="price-heading">
+      <div class="price-card"><span>日本のApp Store</span><strong>基本無料</strong><span>広告削除は100円・買い切り</span></div>
+      <div><h2 id="price-heading">広告削除は、一度だけ。</h2><p>無料の状態では、設定画面と「法螺貝のお手入れ」に広告が表示されます。日本のApp Storeでは、一度だけ100円で購入すると、すべての広告をなくせます。サブスクリプションではありません。</p><p><small>実際の価格はApp Storeの購入画面でご確認ください。</small></p></div>
     </section>
-
-    <section id="privacy">
-      <h2>プライバシー</h2>
-      <p>生の音声や端末の動きを保存・送信しません。マイク入力は端末内で息の強さへ変換し、傾きや動きは演奏操作にだけ使います。</p>
-      <p><a href="privacy.html">プライバシーポリシー全文を読む</a></p>
+    <section id="privacy" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">演奏の音を、保存・送信しません。</h2><p class="section-lead">マイクは息を判定するために使います。録音するためではありません。</p>
+      <div class="privacy-grid">
+        <div class="privacy-item"><strong>生の音声を残さない</strong>マイク入力は端末内で息の強さへ変換されます。</div>
+        <div class="privacy-item"><strong>動きの記録を送らない</strong>傾きや動きは演奏操作にだけ使用します。</div>
+        <div class="privacy-item"><strong>アカウント不要</strong>利用者登録やクラウド保存はありません。</div>
+        <div class="privacy-item"><strong>演奏はオフラインでも可能</strong>広告表示、購入、購入復元には通信が必要です。</div>
+      </div><p><a href="privacy.html">プライバシーポリシー全文を読む</a></p>
     </section>
-
-    <section id="contact" class="contact">
-      <h2>お問い合わせ</h2>
-      <p>不具合やご要望は、GitHubの問い合わせページからお知らせください。公開ページのため、氏名、メールアドレス、購入情報などの個人情報は書き込まないでください。</p>
-      <a class="button" href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">お問い合わせページを開く</a>
-      <p>お問い合わせの際は、利用している端末の機種、OSのバージョン、発生した状況を個人情報を含めずにお知らせください。</p>
+    <section id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">よくある質問</h2>
+      <details><summary>対応する端末とOSを教えてください</summary><p>iOS／iPadOS 13.0以降のiPhoneとiPadに対応しています。端末によってマイクの位置や反応が異なります。</p></details>
+      <details><summary>息を吹いても鳴りません</summary><p>法螺貝のマイク利用が許可されているか確認してください。起動後の周囲音の確認中は約1.5秒間静かにし、反応するマイクの位置へ、強すぎない息を一定に送ってください。設定の「音を確認」でスピーカーも確認できます。</p></details>
+      <details><summary>自分に合う吹き方へ調整できますか</summary><p>右上の法螺貝アイコンから設定を開き、「自分の息に合わせる」をお試しください。画面の合図に合わせ、普段の強さで約1秒ずつ3回吹きます。</p></details>
+      <details><summary>インターネット接続は必要ですか</summary><p>演奏だけなら接続は不要です。無料版の広告表示、広告削除の購入、以前の購入の復元には接続が必要です。</p></details>
+      <details><summary>機種変更後も広告削除を使えますか</summary><p>購入時と同じApple Accountを使用し、設定の「以前の購入を復元」を選んでください。</p></details>
+      <details><summary>録音やクラウド保存はできますか</summary><p>録音、利用者アカウント、クラウド保存・同期には対応していません。生の音声や端末の動きも保存・送信しません。</p></details>
+      <details><summary>端末を動かした時に「ポン」と鳴ります</summary><p>演奏していない時に一定以上の衝撃を検出すると、法螺貝を叩いたような、こもった打音が鳴ります。端末を落としたり強く叩いたりしないでください。</p></details>
+    </section>
+    <section class="developer" aria-labelledby="developer-heading">
+      <img class="developer-icon" src="assets/developer-icon.webp" width="400" height="400" loading="lazy" alt="水色の背景に法螺貝を配置した開発者アカウントのアイコン">
+      <div><h2 id="developer-heading">個人開発者が作っています。</h2><p><strong>Takumi Yoshikawa</strong></p><p>スマートフォンのセンサーや音を使い、触って試したくなる小さなアプリを個人で開発しています。</p><p><a href="https://x.com/noi_mage3" rel="me noopener">X：@noi_mage3</a></p></div>
+    </section>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">お問い合わせ</h2><p>不具合やご要望は、GitHubの公開問い合わせページからお知らせください。氏名、メールアドレス、購入情報などの個人情報は書き込まないでください。</p>
+      <p><a href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">お問い合わせページを開く</a></p><p>利用している端末、OSのバージョン、発生した状況を、個人情報を含めずにお知らせください。</p>
+    </section>
+    <section class="final-cta" aria-labelledby="download-heading">
+      <h2 id="download-heading">息と動きで、あなただけの一音を探してみませんか。</h2><p>上手に吹くと、良い音が出ます。</p>
+      <a href="https://apps.apple.com/jp/app/id6795740681" aria-label="App Storeで法螺貝をダウンロード"><img class="store-badge" src="assets/badges/app-store-ja.svg" alt="App Storeからダウンロード"></a>
     </section>
   </main>
-
   <footer>
-    <p>法螺貝 Version 0.2.0</p>
-    <p>最終更新日：2026年8月17日</p>
+    <nav class="footer-links" aria-label="フッターメニュー"><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a><a href="#contact">お問い合わせ</a><a href="https://x.com/noi_mage3" rel="me noopener">X</a><a href="en/" lang="en" hreflang="en">English</a></nav>
+    <p>iPhone・iPad／iOS・iPadOS 13.0以降</p><p>法螺貝 Version 0.2.0　© 2026 Takumi Yoshikawa</p><p>最終更新日：2026年8月20日</p>
   </footer>
 </body>
 </html>
