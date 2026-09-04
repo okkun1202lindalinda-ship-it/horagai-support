@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Horagai est une conque japonaise ludique sur iPhone et iPad. Soufflez à petite distance, inclinez et secouez votre appareil pour trouver votre son.">
+  <meta name="theme-color" content="#91ced8">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Horagai | Soufflez, inclinez et jouez">
+  <meta property="og:description" content="Une conque japonaise ludique à jouer avec votre souffle et les mouvements de votre iPhone ou iPad.">
+  <meta property="og:url" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/fr/">
+  <meta property="og:image" content="https://okkun1202lindalinda-ship-it.github.io/horagai-support/assets/horagai.webp">
+  <meta property="og:image:alt" content="La conque japonaise utilisée dans l’application Horagai sur un fond bleu clair">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/fr/">
+  <link rel="alternate" hreflang="ja" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <link rel="alternate" hreflang="en" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/en/">
+  <link rel="alternate" hreflang="fr" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://okkun1202lindalinda-ship-it.github.io/horagai-support/">
+  <title>Horagai | Soufflez, inclinez et jouez</title>
+  <link rel="icon" href="../assets/developer-icon.webp" type="image/webp">
+  <style>
+    :root { color-scheme:light; --water:#91ced8; --soft:#e4f5f7; --ink:#173c43; --muted:#527078; --paper:rgba(255,255,255,.9); --line:rgba(23,60,67,.14); --accent:#087a75; --dark:#075e5b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:radial-gradient(circle at 16% 4%,rgba(255,255,255,.65),transparent 30rem),linear-gradient(180deg,var(--water),var(--soft) 48rem,#f9fdfd); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.75; }
+    img { display:block; max-width:100%; height:auto; }
+    a { color:var(--dark); }
+    a:focus-visible { outline:3px solid #1c5f9c; outline-offset:4px; }
+    .skip { position:absolute; left:-9999px; }
+    .skip:focus { left:1rem; top:1rem; z-index:20; padding:.7rem 1rem; border-radius:.7rem; background:white; }
+    .topbar, main, .hero { width:min(70rem,calc(100% - 2rem)); margin:auto; }
+    .topbar { padding:1rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand { display:inline-flex; align-items:center; gap:.65rem; color:var(--ink); font-weight:800; text-decoration:none; }
+    .brand img { width:2.5rem; height:2.5rem; object-fit:contain; }
+    .languages { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.45rem; }
+    .languages a { padding:.38rem .7rem; border:1px solid rgba(255,255,255,.75); border-radius:999px; background:rgba(255,255,255,.5); text-decoration:none; font-weight:700; }
+    header { padding:2.2rem 0 4.6rem; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(16rem,.75fr); gap:clamp(2rem,6vw,5rem); align-items:center; }
+    .eyebrow { margin:0 0 .6rem; color:var(--dark); font-size:.88rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(3.2rem,10vw,6.1rem); line-height:1; letter-spacing:.03em; }
+    .tagline { margin:1rem 0 .45rem; font-size:clamp(1.55rem,4.2vw,2.8rem); font-weight:800; line-height:1.3; }
+    .lead { max-width:41rem; margin:0 0 1.5rem; font-size:1.08rem; }
+    .cta { display:inline-flex; align-items:center; justify-content:center; min-height:3.25rem; padding:.75rem 1.15rem; border-radius:.9rem; color:white; background:var(--accent); box-shadow:0 .55rem 1.3rem rgba(8,122,117,.2); font-weight:800; text-decoration:none; }
+    .cta:hover { background:var(--dark); }
+    .small { margin:.7rem 0 0; color:var(--muted); font-size:.9rem; }
+    .visual { position:relative; display:grid; place-items:center; min-height:27rem; }
+    .visual::before { content:""; position:absolute; width:min(27rem,78vw); aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.34); box-shadow:inset 0 0 0 1px rgba(255,255,255,.48); }
+    .shell { position:relative; width:min(23rem,74vw); max-height:32rem; object-fit:contain; filter:drop-shadow(0 1.2rem 1.3rem rgba(30,68,75,.2)); transform:rotate(-5deg); }
+    main { padding-bottom:3.5rem; }
+    section { margin:1.25rem 0; padding:clamp(1.4rem,4.5vw,3rem); border:1px solid var(--line); border-radius:1.5rem; background:var(--paper); box-shadow:0 .8rem 2rem rgba(30,68,75,.07); }
+    section h2 { margin:0 0 .75rem; font-size:clamp(1.55rem,4.7vw,2.35rem); line-height:1.35; }
+    .intro { max-width:49rem; margin:0 0 1.5rem; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .card { padding:1.25rem; border:1px solid var(--line); border-radius:1.1rem; background:rgba(228,245,247,.6); }
+    .card h3 { margin:0 0 .35rem; font-size:1.12rem; }
+    .card p { margin:0; }
+    .steps { counter-reset:step; display:grid; gap:1rem; margin:1.3rem 0; padding:0; list-style:none; }
+    .steps li { position:relative; min-height:2.55rem; padding-left:3.35rem; }
+    .steps li::before { counter-increment:step; content:counter(step); position:absolute; left:0; top:0; display:grid; place-items:center; width:2.45rem; height:2.45rem; border-radius:50%; color:white; background:var(--accent); font-weight:800; }
+    .note { padding:1rem 1.1rem; border-left:.3rem solid var(--accent); border-radius:.35rem .9rem .9rem .35rem; background:rgba(145,206,216,.22); }
+    details { border-top:1px solid var(--line); }
+    details:last-of-type { border-bottom:1px solid var(--line); }
+    summary { padding:1rem .1rem; cursor:pointer; font-weight:750; }
+    details p { margin:0; padding:0 .1rem 1rem; }
+    .developer { display:grid; grid-template-columns:auto 1fr; gap:1.2rem; align-items:center; }
+    .developer img { width:5.6rem; height:5.6rem; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.8); }
+    .developer h2, .developer p { margin:.25rem 0; }
+    .final { text-align:center; background:linear-gradient(145deg,rgba(145,206,216,.72),rgba(255,255,255,.92)); }
+    footer { padding:0 1rem 3rem; color:var(--muted); text-align:center; font-size:.9rem; }
+    .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem 1.1rem; margin-bottom:1rem; }
+    .footer-links a { font-weight:700; }
+    @media (max-width:760px) { .hero,.grid { grid-template-columns:1fr; } .hero { text-align:center; } .lead { margin-left:auto; margin-right:auto; } .visual { min-height:22rem; } .developer { text-align:left; } }
+    @media (max-width:420px) { .topbar { align-items:flex-start; } .languages { max-width:11rem; } .developer { grid-template-columns:1fr; text-align:center; } .developer img { margin:auto; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <nav class="topbar" aria-label="Navigation principale">
+    <a class="brand" href="./"><img src="../assets/horagai.webp" alt=""><span>Horagai</span></a>
+    <span class="languages"><a href="../" lang="ja" hreflang="ja">日本語</a><a href="../en/" lang="en" hreflang="en">English</a></span>
+  </nav>
+  <header>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Une conque japonaise dans votre main</p>
+        <h1>Horagai</h1>
+        <p class="tagline">Soufflez bien, ça sonne bien.</p>
+        <p class="lead">Dirigez votre souffle vers le microphone à petite distance, puis inclinez ou secouez votre iPhone ou iPad. Obtenir un beau son — ou le manquer — fait partie du plaisir.</p>
+        <a class="cta" href="https://apps.apple.com/fr/app/id6795740681" rel="noopener">Télécharger dans l’App Store</a>
+        <p class="small">Téléchargement gratuit · iPhone et iPad · iOS/iPadOS 13 ou version ultérieure</p>
+      </div>
+      <div class="visual"><img class="shell" src="../assets/horagai.webp" width="1024" height="1536" alt="Conque japonaise utilisée comme instrument dans l’application Horagai"></div>
+    </div>
+  </header>
+  <main id="contenu">
+    <section id="fonctions">
+      <h2>Un instrument simple, sensible et imprévisible.</h2>
+      <p class="intro">Horagai répond au souffle et aux mouvements de l’appareil. Il n’est pas nécessaire que chaque tentative soit parfaite : cherchez le son qui vous plaît.</p>
+      <div class="grid">
+        <article class="card"><h3>Soufflez pour jouer</h3><p>La puissance de votre souffle fait varier le volume. Un souffle régulier et modéré suffit.</p></article>
+        <article class="card"><h3>Inclinez pour changer de note</h3><p>L’angle de l’appareil fait passer le son du grave à l’aigu.</p></article>
+        <article class="card"><h3>Secouez pour une variation vive</h3><p>Un mouvement rapide donne une variation de hauteur plus dynamique.</p></article>
+        <article class="card"><h3>Tapotez pour une percussion</h3><p>Lorsque vous ne jouez pas, un léger choc produit un son étouffé inspiré d’un petit tambour.</p></article>
+      </div>
+    </section>
+    <section id="utilisation">
+      <h2>Comment jouer</h2>
+      <ol class="steps">
+        <li>Autorisez l’accès au microphone lors de la première ouverture.</li>
+        <li>Placez l’embouchure affichée du côté du microphone, sans coller l’appareil à votre bouche.</li>
+        <li>Soufflez régulièrement, avec une intensité modérée. L’application commence à jouer lorsqu’elle reconnaît votre souffle.</li>
+        <li>Inclinez ou secouez doucement l’appareil pour faire varier la hauteur du son.</li>
+      </ol>
+      <p class="note"><strong>Pour votre appareil et votre confort :</strong> ne soufflez pas excessivement fort. Gardez une petite distance afin d’éviter que l’humidité du souffle pénètre dans le microphone ou le port de charge. Lorsque le volume est élevé, pensez aux personnes, au lieu et à l’heure.</p>
+    </section>
+    <section id="personnalisation">
+      <h2>Placez la conque comme vous le souhaitez.</h2>
+      <p>Sur l’écran principal, vous pouvez déplacer, agrandir, réduire et faire pivoter la conque. Sa position à l’écran ne change pas la manière dont le son est produit.</p>
+    </section>
+    <section id="publicites">
+      <h2>Gratuit, avec une option unique pour retirer les publicités.</h2>
+      <p>La version gratuite peut afficher une bannière dans les Réglages et une publicité pendant l’entretien de la conque. L’option « Supprimer les publicités » est un achat unique, sans abonnement. Le prix correspondant à votre région est affiché par l’App Store. Un achat précédent peut être restauré avec le même compte Apple.</p>
+    </section>
+    <section id="confidentialite">
+      <h2>Votre souffle n’est ni enregistré ni envoyé.</h2>
+      <div class="grid">
+        <div class="card"><h3>Pas d’enregistrement</h3><p>Le son du microphone est transformé en intensité sur l’appareil. Le son brut n’est pas conservé.</p></div>
+        <div class="card"><h3>Pas de compte</h3><p>La version 1 ne comporte ni compte, ni sauvegarde dans le cloud, ni synchronisation.</p></div>
+      </div>
+      <p><a href="privacy.html">Lire la Politique de confidentialité</a></p>
+    </section>
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Pourquoi aucun son ne sort-il ?</summary><p>Vérifiez l’autorisation du microphone et le volume de l’appareil, puis essayez un souffle régulier à petite distance. Le bouton « Vérifier le son » dans les Réglages permet de contrôler le haut-parleur sans souffler.</p></details>
+      <details><summary>Peut-on jouer sans connexion ?</summary><p>Oui, la fonction instrument peut être utilisée hors connexion. Une connexion est nécessaire pour les publicités, les achats et la restauration d’un achat.</p></details>
+      <details><summary>Comment récupérer l’option sans publicité ?</summary><p>Ouvrez les Réglages et choisissez « Restaurer un achat précédent » avec le même compte Apple que celui utilisé lors de l’achat.</p></details>
+      <details><summary>Le souffle est-il enregistré ?</summary><p>Non. Le son brut n’est ni enregistré, ni sauvegardé, ni transmis.</p></details>
+    </section>
+    <section class="developer" id="contact">
+      <img src="../assets/developer-icon.webp" width="256" height="256" alt="Icône du développeur">
+      <div><h2>Un projet indépendant.</h2><p>Horagai est développé par Takumi Yoshikawa. Suivez les nouvelles sur <a href="https://x.com/horagai_app" rel="me noopener">X @horagai_app</a>.</p><p>Pour demander de l’aide, utilisez la <a href="https://github.com/okkun1202lindalinda-ship-it/horagai-support/issues/new" rel="noopener">page de contact publique</a>. N’y publiez aucune information personnelle ou liée à un achat.</p></div>
+    </section>
+    <section class="final">
+      <h2>Quel son trouverez-vous aujourd’hui ?</h2>
+      <p>Soufflez bien, ça sonne bien.</p>
+      <a class="cta" href="https://apps.apple.com/fr/app/id6795740681" rel="noopener">Télécharger Horagai</a>
+    </section>
+  </main>
+  <footer>
+    <nav class="footer-links" aria-label="Informations légales et contact"><a href="privacy.html">Confidentialité</a><a href="terms.html">Conditions d’utilisation</a><a href="#contact">Contact</a><a href="https://x.com/horagai_app" rel="me noopener">X</a><a href="../" lang="ja" hreflang="ja">日本語</a><a href="../en/" lang="en" hreflang="en">English</a></nav>
+    <p>Horagai · iPhone et iPad · iOS/iPadOS 13 ou version ultérieure</p>
+    <p>Dernière mise à jour : 3 septembre 2026 · © 2026 Takumi Yoshikawa</p>
+  </footer>
+</body>
+</html>
